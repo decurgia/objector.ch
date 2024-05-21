@@ -16,4 +16,4 @@ django-filter==23.1
 markdown==3.4.3
 
 flake8==6.0.0
-black==23.1.0
+black==24.4.2
