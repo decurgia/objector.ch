@@ -4,20 +4,20 @@ Object stamina
 
 
 ## Documentation
-https://github.com/gldecurtins/objector/wiki
+https://github.com/decurgia/objector.ch/wiki
 
 
 ## Docker development setup
 ```
 cd ~
-git clone https://github.com/gldecurtins/objector
+git clone https://github.com/decurgia/objector.ch
 docker-compose up
 ```
 
 ## Python Virtual Environment development setup
 ```
 cd ~
-git clone https://github.com/gldecurtins/objector
+git clone https://github.com/decurgia/objector.ch
 python3 -m venv venv
 source venv/bin/activate
 pip install --upgrade pip
