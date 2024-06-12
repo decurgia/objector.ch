@@ -22,10 +22,5 @@ class User(RulesModelMixin, AbstractUser):
         max_length=2,
     )
 
-    def get_picture(self) -> str:
-        social_user = self.social_auth.get()
-        picture = social_user.extra_data.get("picture", "")
-        return picture
-
     def get_absolute_url(self) -> str:
         return f"/user/{self.id}"

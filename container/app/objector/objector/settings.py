@@ -75,7 +75,7 @@ AUTHENTICATION_BACKENDS = {
 
 ANONYMOUS_USER_ID = -1
 
-LOGIN_URL = "/login/auth0"
+LOGIN_URL = "/registration/login"
 LOGIN_REDIRECT_URL = "/dashboard/"
 LOGOUT_REDIRECT_URL = "/"
 
@@ -133,6 +133,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, 'objector.sqlite3'),
+    }
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

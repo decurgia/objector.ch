@@ -20,4 +20,4 @@ _static/
 _media/
 
 # SQLite
-db.sqlite3
+*.sqlite3
