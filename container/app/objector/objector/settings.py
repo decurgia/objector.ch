@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     "rules.apps.AutodiscoverRulesConfig",
-    "social_django",
     "crispy_forms",
     "crispy_tailwind",
     "storages",
@@ -70,19 +68,9 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 AUTH_USER_MODEL = "common.User"
 
-# Auth0 settings
-SOCIAL_AUTH_TRAILING_SLASH = False  # Remove trailing slash from routes
-SOCIAL_AUTH_AUTH0_DOMAIN = os.environ.get("SOCIAL_AUTH_AUTH0_DOMAIN", "")
-SOCIAL_AUTH_AUTH0_KEY = os.environ.get("SOCIAL_AUTH_AUTH0_KEY", "")
-SOCIAL_AUTH_AUTH0_SECRET = os.environ.get("SOCIAL_AUTH_AUTH0_SECRET", "")
-SOCIAL_AUTH_AUTH0_SCOPE = ["openid", "profile", "email"]
-SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
-SOCIAL_AUTH_PROTECTED_USER_FIELDS = ["first_name", "last_name"]
-
 AUTHENTICATION_BACKENDS = {
     "rules.permissions.ObjectPermissionBackend",
     "django.contrib.auth.backends.ModelBackend",
-    "social_core.backends.auth0.Auth0OAuth2",
 }
 
 ANONYMOUS_USER_ID = -1
@@ -110,16 +98,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "objector.wsgi.application"
-
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    "default": dj_database_url.parse(
-        os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3")
-    ),
-}
 
 
 # Password validation
@@ -161,21 +139,8 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "_static")
-
-# Media files
-
-if bool(os.environ.get("USE_SPACES", False) == "True"):
-    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-    AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
-    AWS_S3_ENDPOINT_URL = os.getenv("AWS_S3_ENDPOINT_URL")
-    AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
-    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-    MEDIA_URL = f"https://{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/"
-
-else:
-    MEDIA_URL = "/media/"
-    MEDIA_ROOT = BASE_DIR / "_media"
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "_media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
