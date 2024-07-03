@@ -1,11 +1,12 @@
 services:
   app:
-    build: container
+    build:
+      context: container
     volumes:
       - ./container/app:/app
     ports:
-      - "127.0.0.1:8000:8000"
+      - "8081:8081"
     environment:
       - SECRET_KEY="unsafe-secret-key"
       - DEBUG=True
-    command: python objector/manage.py runserver 0.0.0.0:8000
+    command: python objector/manage.py runserver 0.0.0.0:8081

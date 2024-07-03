@@ -1,9 +1,15 @@
 services:
   app:
-    build: container
+    build:
+      context: container
+      args:
+        - REQUIREMENTS=requirements.txt
     volumes:
       - ./container/app:/app
     ports:
-      - "127.0.0.1:8000:8000"
+      - "8081:8081"
     environment:
       - DEBUG=False
+      - PORT=8081
+      - PYTHONPATH=/app/objector/
+    command: gunicorn -w 4 objector.wsgi

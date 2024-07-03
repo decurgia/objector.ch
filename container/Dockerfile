@@ -11,4 +11,4 @@ WORKDIR /app/
 RUN pip install --root-user-action=ignore --upgrade pip
 RUN pip install --root-user-action=ignore --upgrade --no-cache-dir --requirement $REQUIREMENTS --disable-pip-version-check
 
-CMD ["python", "objector/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "objector/manage.py", "runserver", "0.0.0.0:8081"]
