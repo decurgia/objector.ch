@@ -241,23 +241,18 @@
                   >
                     {% translate "Profile" %}
                   </a>
-                  <a
-                    href="/registration/logout"
-                    class="block py-2 px-4 text-sm text-gray-700"
-                    role="menuitem"
-                    tabindex="-1"
-                    id="user-menu-item-2"
-                  >
-                    {% translate "Log out" %}
-                  </a>
+                  <form method="post" action="{% url 'common:logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="block w-full py-2 px-4 text-left text-sm text-gray-700">{% translate "Logout" %}</button>
+                  </form>
                 </div>
               </div>
               {% else %}
               <a
-                href="/registration/login"
+                href="{% url 'common:login' %}"
                 class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
-                {% translate "Log in" %}
+                {% translate "Login" %}
               </a>
               {% endif %}
             </div>

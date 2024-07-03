@@ -17,4 +17,7 @@
     "**/templates/**/*": "django-txt",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements"
   },
+  "[django-html]": {
+   "editor.formatOnSave": false
+  },
 }

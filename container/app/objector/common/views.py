@@ -1,8 +1,6 @@
-from django.contrib.auth import logout as django_logout
 from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (
-    RedirectView,
     UpdateView,
     DetailView,
     DeleteView,
@@ -150,4 +148,4 @@ class UserUpdateView(AutoPermissionRequiredMixin, UpdateView):
 class UserDeleteView(AutoPermissionRequiredMixin, DeleteView):
     model = User
     raise_exception = True
-    success_url = reverse_lazy("home")
+    success_url = reverse_lazy("common:home")

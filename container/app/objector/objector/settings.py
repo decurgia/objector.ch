@@ -75,7 +75,7 @@ AUTHENTICATION_BACKENDS = {
 
 ANONYMOUS_USER_ID = -1
 
-LOGIN_URL = "/registration/login"
+LOGIN_URL = "/user/login/"
 LOGIN_REDIRECT_URL = "/dashboard/"
 LOGOUT_REDIRECT_URL = "/"
 
