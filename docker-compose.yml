@@ -5,7 +5,6 @@ services:
       args:
         - REQUIREMENTS=requirements.txt
     volumes:
-      - ./objector-container/app:/app
       - db:/app/objector/_db
       - static:/app/objector/_static
       - media:/app/objector/_media
