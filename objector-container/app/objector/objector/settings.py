@@ -137,7 +137,7 @@ USE_TZ = True
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, '_db/objector.sqlite3'),
+        "NAME": os.path.join(BASE_DIR, '_db', 'objector.sqlite3'),
     }
 }
 
