@@ -10,6 +10,6 @@ Pillow==10.3.0
 jsonpath-ng==1.5.3
 django-filter==23.1
 markdown==3.4.3
-gunicorn==22.0.0
+
 flake8==6.0.0
 black==24.4.2
