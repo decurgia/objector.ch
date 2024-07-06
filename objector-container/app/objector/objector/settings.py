@@ -137,7 +137,7 @@ USE_TZ = True
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, 'objector.sqlite3'),
+        "NAME": os.path.join(BASE_DIR, '_db/objector.sqlite3'),
     }
 }
 
@@ -147,7 +147,7 @@ DATABASES = {
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "_static")
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "_media"
+MEDIA_ROOT = os.path.join(BASE_DIR, "_media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

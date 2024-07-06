@@ -1,15 +1,31 @@
 services:
   app:
     build:
-      context: container
+      context: objector-container
       args:
         - REQUIREMENTS=requirements.txt
     volumes:
-      - ./container/app:/app
+      - ./objector-container/app:/app
+      - db:/app/objector/_db
+      - static:/app/objector/_static
+      - media:/app/objector/_media
     ports:
       - "8081:8081"
     environment:
       - DEBUG=False
-      - PORT=8081
       - PYTHONPATH=/app/objector/
-    command: gunicorn -w 4 objector.wsgi
+    command: gunicorn -w 4 -b :8081 objector.wsgi
+  nginx:
+    build: nginx-container
+    volumes:
+      - static:/app/objector/_static
+      - media:/app/objector/_media
+    ports:
+      - 8082:8082
+    depends_on:
+      - app
+
+volumes:
+  static:
+  media:
+  db:

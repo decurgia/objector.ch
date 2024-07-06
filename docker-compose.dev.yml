@@ -1,12 +1,14 @@
 services:
   app:
     build:
-      context: container
+      context: objector-container
+      args:
+        - REQUIREMENTS=requirements.dev.txt
     volumes:
-      - ./container/app:/app
+      - ./objector-container/app:/app
     ports:
       - "8081:8081"
     environment:
-      - SECRET_KEY="unsafe-secret-key"
       - DEBUG=True
+      - SECRET_KEY="unsafe-secret-key"
     command: python objector/manage.py runserver 0.0.0.0:8081
