@@ -6,13 +6,17 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
-    directory: "/"
+    directory: "/objector-container/app"
     schedule:
       interval: "daily"
   - package-ecosystem: "docker"
-    directory: "/"
+    directory: "/objector-container/"
     schedule:
       interval: "daily"
+  - package-ecosystem: "docker"
+    directory: "/nginx-container/"
+    schedule:
+    interval: "daily"
   - package-ecosystem: "npm"
     directory: ".github/dependabot/"
     schedule:
