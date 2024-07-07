@@ -14,6 +14,14 @@ services:
       - DEBUG=False
       - PYTHONPATH=/app/objector/
       - SECRET_KEY=${SECRET_KEY}
+      - EMAIL_USE_SSL=${EMAIL_USE_SSL}
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_PORT=${EMAIL_PORT}
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+      - EMAIL_SUBJECT_PREFIX=${EMAIL_SUBJECT_PREFIX}
+      - SERVER_EMAIL=${SERVER_EMAIL}
+      - ADMINS=${ADMINS}
     command: gunicorn -w 4 -b :8081 objector.wsgi
   nginx:
     build: nginx-container

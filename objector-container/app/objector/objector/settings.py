@@ -154,12 +154,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "_media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-EMAIL_USE_SSL = bool(os.environ.get("EMAIL_USE_SSL", None))
+EMAIL_USE_SSL = bool(os.environ.get("EMAIL_USE_SSL", True))
 EMAIL_HOST = str(os.environ.get("EMAIL_HOST", None))
 EMAIL_PORT = str(os.environ.get("EMAIL_PORT", None))
 EMAIL_HOST_USER = str(os.environ.get("EMAIL_HOST_USER", None))
 EMAIL_HOST_PASSWORD = str(os.environ.get("EMAIL_HOST_PASSWORD", None))
-EMAIL_SUBJECT_PREFIX = "[Objector] "
+EMAIL_SUBJECT_PREFIX = str(os.environ.get("EMAIL_SUBJECT_PREFIX", "[Objector] "))
 SERVER_EMAIL = str(os.environ.get("SERVER_EMAIL", None))
 _ADMINS = str(os.environ.get("ADMINS", None)).split(",")
 ADMINS = list(zip(_ADMINS[::2], _ADMINS[1::2]))

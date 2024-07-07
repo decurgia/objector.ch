@@ -17,6 +17,7 @@ docker/
 __pycache__/
 _static/
 _media/
+_db/
 
 # SQLite
 db.sqlite3
