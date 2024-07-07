@@ -14,6 +14,7 @@ services:
       - DEBUG=False
       - PYTHONPATH=/app/objector/
       - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      - CSRF_TRUSTED_ORIGINS=${CSRF_TRUSTED_ORIGINS}
       - SECRET_KEY=${SECRET_KEY}
       - EMAIL_USE_SSL=${EMAIL_USE_SSL}
       - EMAIL_HOST=${EMAIL_HOST}

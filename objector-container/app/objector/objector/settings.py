@@ -28,7 +28,7 @@ DEBUG = bool(os.environ.get("DEBUG", False) == "True")
 
 ALLOWED_HOSTS = str(os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost")).split(",")
 DEFAULT_HOST = str(os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost")).split(",")[0]
-
+CSRF_TRUSTED_ORIGINS = str(os.environ.get("CSRF_TRUSTED_ORIGINS", "127.0.0.1,localhost")).split(",")
 
 # Application definition
 
