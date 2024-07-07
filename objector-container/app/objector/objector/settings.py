@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "rules.apps.AutodiscoverRulesConfig",
     "crispy_forms",
     "crispy_tailwind",
-    "storages",
     "django_filters",
     "common",
     "inventory",
