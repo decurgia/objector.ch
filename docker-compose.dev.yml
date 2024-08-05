@@ -3,7 +3,7 @@ services:
     build:
       context: objector-container
       args:
-        - REQUIREMENTS=requirements.dev.txt
+        - REQUIREMENTS=dev-requirements.txt
     volumes:
       - ./objector-container/app:/app
       - db:/app/objector/_db

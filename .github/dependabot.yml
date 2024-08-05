@@ -6,7 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
-    directory: "/objector-container/app"
+    directory: "/objector-container/app/"
     schedule:
       interval: "daily"
   - package-ecosystem: "docker"
