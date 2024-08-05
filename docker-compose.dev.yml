@@ -6,10 +6,14 @@ services:
         - REQUIREMENTS=requirements.dev.txt
     volumes:
       - ./objector-container/app:/app
+      - db:/app/objector/_db
+      - static:/app/objector/_static
+      - media:/app/objector/_media
     ports:
       - "8081:8081"
     environment:
       - DEBUG=True
+      - PYTHONPATH=/app/objector/
       - SECRET_KEY="unsafe-secret-key"
     command: python objector/manage.py runserver 0.0.0.0:8081 --nostatic
   nginx:
