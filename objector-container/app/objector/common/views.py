@@ -15,7 +15,7 @@ from rules.contrib.views import AutoPermissionRequiredMixin
 from .models import User
 from .forms import UserForm
 from django.urls import reverse_lazy
-
+import os
 
 class HomeTemplateView(TemplateView):
     template_name = "common/home.html"
@@ -130,6 +130,7 @@ class DashboardTemplateView(LoginRequiredMixin, TemplateView):
             Min("latitude"), Max("latitude"), Min("longitude"), Max("longitude")
         )
         context["current_datetime"] = timezone.now()
+        context["mapbox_access_token"] = os.environ.get("MAPBOX_ACCESS_TOKEN")
 
         return context
 
