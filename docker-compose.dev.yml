@@ -11,4 +11,18 @@ services:
     environment:
       - DEBUG=True
       - SECRET_KEY="unsafe-secret-key"
-    command: python objector/manage.py runserver 0.0.0.0:8081
+    command: python objector/manage.py runserver 0.0.0.0:8081 --nostatic
+  nginx:
+    build: nginx-container
+    volumes:
+      - static:/app/objector/_static
+      - media:/app/objector/_media
+    ports:
+      - 8082:8082
+    depends_on:
+      - app
+
+volumes:
+  static:
+  media:
+  db:
