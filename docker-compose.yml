@@ -24,7 +24,6 @@ services:
       - EMAIL_SUBJECT_PREFIX=${EMAIL_SUBJECT_PREFIX}
       - SERVER_EMAIL=${SERVER_EMAIL}
       - ADMINS=${ADMINS}
-      - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
     command: gunicorn -w 4 -b :8081 objector.wsgi
   nginx:
     build: nginx-container

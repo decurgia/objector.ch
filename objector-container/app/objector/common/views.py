@@ -130,7 +130,6 @@ class DashboardTemplateView(LoginRequiredMixin, TemplateView):
             Min("latitude"), Max("latitude"), Min("longitude"), Max("longitude")
         )
         context["current_datetime"] = timezone.now()
-        context["mapbox_access_token"] = os.environ.get("MAPBOX_ACCESS_TOKEN")
 
         return context
 

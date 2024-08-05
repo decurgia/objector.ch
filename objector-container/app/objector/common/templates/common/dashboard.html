@@ -77,14 +77,11 @@
     [{{ locations_aggregates.latitude__min|default:45.77|unlocalize }}, {{ locations_aggregates.longitude__max|default:10.45|unlocalize }}]
   ]);
 
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-      'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    id: 'mapbox/streets-v11',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     tileSize: 512,
-    zoomOffset: -1,
-    accessToken: '{{ mapbox_access_token }}'
+    zoomOffset: -1
   }).addTo(map);
   var greenIcon = L.icon({iconUrl: '{% static 'common/img/marker-icon-green.png' %}', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [0, -34]});
   var amberIcon = L.icon({iconUrl: '{% static 'common/img/marker-icon-amber.png' %}', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [0, -34]});
