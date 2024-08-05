@@ -23,6 +23,7 @@ services:
       - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
       - EMAIL_SUBJECT_PREFIX=${EMAIL_SUBJECT_PREFIX}
       - SERVER_EMAIL=${SERVER_EMAIL}
+      - DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL}
       - ADMINS=${ADMINS}
     command: gunicorn -w 4 -b :8081 objector.wsgi
   nginx:
