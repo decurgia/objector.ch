@@ -155,7 +155,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 EMAIL_USE_SSL = bool(os.environ.get("EMAIL_USE_SSL", True))
 EMAIL_HOST = str(os.environ.get("EMAIL_HOST", None))
-EMAIL_PORT = str(os.environ.get("EMAIL_PORT", None))
+EMAIL_PORT = str(os.environ.get("EMAIL_PORT", 465))
 EMAIL_HOST_USER = str(os.environ.get("EMAIL_HOST_USER", None))
 EMAIL_HOST_PASSWORD = str(os.environ.get("EMAIL_HOST_PASSWORD", None))
 EMAIL_SUBJECT_PREFIX = str(os.environ.get("EMAIL_SUBJECT_PREFIX", "[Objector] "))
