@@ -16,7 +16,7 @@ updates:
   - package-ecosystem: "docker"
     directory: "/nginx-container/"
     schedule:
-    interval: "daily"
+      interval: "daily"
   - package-ecosystem: "npm"
     directory: ".github/dependabot/"
     schedule:
