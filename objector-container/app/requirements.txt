@@ -6,6 +6,6 @@ django-cleanup==7.0.0
 django-filter==24.3
 Pillow==10.4.0
 jsonpath-ng==1.6.1
-markdown==3.4.3
+markdown==3.6
 
 gunicorn==22.0.0
