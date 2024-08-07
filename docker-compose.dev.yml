@@ -6,9 +6,9 @@ services:
         - REQUIREMENTS=dev-requirements.txt
     volumes:
       - ./objector-container/app:/app
-      - db:/app/objector/_db
       - static:/app/objector/_static
       - media:/app/objector/_media
+      - db:/app/objector/_db
     ports:
       - "8081:8081"
     environment:

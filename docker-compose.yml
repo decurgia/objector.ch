@@ -5,9 +5,9 @@ services:
       args:
         - REQUIREMENTS=requirements.txt
     volumes:
-      - db:/app/objector/_db
       - static:/app/objector/_static
       - media:/app/objector/_media
+      - db:/app/objector/_db
     ports:
       - "8081:8081"
     environment:
