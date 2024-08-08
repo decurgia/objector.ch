@@ -1,4 +1,4 @@
-FROM python:3.12.4-alpine
+FROM python:3.12.5-alpine
 
 ARG REQUIREMENTS=dev-requirements.txt
 ENV PYTHONDONTWRITEBYTECODE=1
