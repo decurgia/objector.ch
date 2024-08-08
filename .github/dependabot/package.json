@@ -1,5 +1,5 @@
 { "dependencies" :
-  { "tailwindcss" : "3.4.7"
+  { "tailwindcss" : "3.4.8"
   , "alpinejs" : "3.14.1"
   , "leaflet" : "1.9.4"
   }
