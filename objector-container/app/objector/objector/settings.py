@@ -28,7 +28,11 @@ DEBUG = bool(os.environ.get("DEBUG", False) == "True")
 
 ALLOWED_HOSTS = str(os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost")).split(",")
 DEFAULT_HOST = str(os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost")).split(",")[0]
-CSRF_TRUSTED_ORIGINS = str(os.environ.get("CSRF_TRUSTED_ORIGINS", "http://127.0.0.1:8082,http://localhost:8082")).split(",")
+CSRF_TRUSTED_ORIGINS = str(
+    os.environ.get(
+        "CSRF_TRUSTED_ORIGINS", "http://127.0.0.1:8082,http://localhost:8082"
+    )
+).split(",")
 
 # Application definition
 
@@ -67,9 +71,22 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
 
 MARKDOWNIFY = {
-  "default": {
-     "WHITELIST_TAGS": ["a", "p", "h1", "src", "img",]
-  }
+    "default": {
+        "WHITELIST_TAGS": [
+            "a",
+            "p",
+            "h1",
+            "h2",
+            "h3",
+            "img",
+            "strong",
+        ],
+        "WHITELIST_ATTRS": [
+            "href",
+            "src",
+            "alt",
+        ]
+    }
 }
 
 AUTH_USER_MODEL = "common.User"
@@ -143,7 +160,7 @@ USE_TZ = True
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, '_db', 'objector.sqlite3'),
+        "NAME": os.path.join(BASE_DIR, "_db", "objector.sqlite3"),
     }
 }
 
