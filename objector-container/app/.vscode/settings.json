@@ -1,5 +1,4 @@
 {
-  "editor.formatOnSave": true,
   "html.format.templating": true,
   "python.testing.unittestArgs": [
     "-v",
@@ -10,7 +9,6 @@
   ],
   "python.testing.pytestEnabled": false,
   "python.testing.unittestEnabled": true,
-  "python.formatting.provider": "black",
   "files.associations": {
     "**/*.html": "html",
     "**/templates/**/*.html": "django-html",
@@ -20,5 +18,9 @@
   "python.analysis.typeCheckingMode": "basic",
   "[django-html]": {
     "editor.formatOnSave": false
-   },
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  }
 }

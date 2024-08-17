@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_tailwind",
     "django_filters",
+    "markdownify",
     "common",
     "inventory",
     "maintenance",
@@ -64,6 +65,12 @@ MIDDLEWARE = [
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
+
+MARKDOWNIFY = {
+  "default": {
+     "WHITELIST_TAGS": ["a", "p", "h1", "src", "img",]
+  }
+}
 
 AUTH_USER_MODEL = "common.User"
 

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load rules %}
+{% load markdownify %}
 {% block title %}Objector + {% translate "Document detail" %} + {{ document }}{% endblock %}
 {% block h1 %}{% translate "Document detail" %}{% endblock %}
 {% block h2 %}{{ document }}{% endblock %}
@@ -49,7 +50,7 @@
             {% translate "Content" %}
           </dt>
           <dd class="mt-1 text-sm text-gray-900">
-            {{ document.content|linebreaksbr }}
+            {{ document.content | markdownify }}
           </dd>
         </div>
         <div class="sm:col-span-2">
