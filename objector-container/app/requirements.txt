@@ -1,7 +1,7 @@
 Django==5.1
 #crispy-tailwind==0.5.0
 crispy-tailwind @ git+https://github.com/django-crispy-forms/crispy-tailwind.git
-rules==3.4
+rules==3.5
 django-cleanup==8.1.0
 django-filter==24.3
 django-markdownify==0.9.5
