@@ -41,7 +41,7 @@ class Command(BaseCommand):
     def send_status_report(self, user, groups_as_list) -> None:
         subject, from_email, to = (
             _("Status report") + " " + formats.localize(timezone.localtime()),
-            "info@objector.app",
+            settings.DEFAULT_FROM_EMAIL,
             user.email,
         )
 
@@ -68,7 +68,7 @@ class Command(BaseCommand):
         text_content += red_sensors.get("content", "")
         text_content += amber_sensors.get("content", "")
 
-        text_content += "\n\n[Objector](https://objector.app)"
+        text_content += "\n\n[Objector](https://objector.ch)"
         html_content = markdown.markdown(text_content)
 
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
