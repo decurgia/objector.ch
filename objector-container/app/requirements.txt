@@ -1,4 +1,4 @@
-Django==5.1.1
+Django==5.1.2
 #crispy-tailwind==0.5.0
 crispy-tailwind @ git+https://github.com/django-crispy-forms/crispy-tailwind.git
 rules==3.5
